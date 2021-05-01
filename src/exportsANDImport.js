@@ -1,18 +1,48 @@
 
 const fs = require('fs');
+const path = require('path');
 //const yargses = require('./yargs')
 
 class exportsAndImportsFile {
 
-    importAssFile(name) {
-        let rawdata = fs.readFileSync(`./${name}.ass`,'utf8').split('\n');
-       //const file = JSON.parse(rawdata);
+    importAssFile(name, tier) {
+        let rawdata;
+        let data = fs.readdirSync(process.cwd());
+        let counter = fs.readdirSync(process.cwd()).length;
+        
+        
+
+        if (name === '*') {
+            for (let i = 0; i < counter; i++) {
+                if (tier == 1 && data[i].toString().includes('.ass') == true && data[i].includes('_edited.ass') == false) {
+                    rawdata = fs.readFileSync(`./${data[i]}`, 'utf8').split('\n');
+                }
+                if (tier == 2 && data[i].toString().includes('_edited.ass') == true) {
+                  
+                    rawdata = fs.readFileSync(`./${data[i]}`, 'utf8').split('\n');
+                }
+            }
+        }
+
+       else if (name !== '*') {
+            if (tier == 1 && name !=='*') {
+                rawdata = fs.readFileSync(`./${name}.ass`, 'utf8').split('\n');
+            }
+            if (tier == 2 && name.includes('_edited') == true && name !=='*') {
+            }
+        }
+
+  
+
+        //     let rawdata = fs.readFileSync(`./${name}.ass`,'utf8').split('\n');
+        //    //const file = JSON.parse(rawdata);
+        console.log(tier,name)
         return rawdata;
     }
 
 
-    exportAsJsonFile(result,tag='') {
-        let fileName =  `./changed${tag}.json`;
+    exportAsJsonFile(result, tag = '') {
+        let fileName = `./changed${tag}.json`;
         //let output = JSON.stringify(result, null, 1);
 
         fs.writeFile(fileName, result, (err) => {
@@ -21,7 +51,7 @@ class exportsAndImportsFile {
         });
     }
 
-    exportAsTxt(result){
+    exportAsTxt(result) {
         let fileName = `./changeLog.txt`;
         let output = JSON.stringify(result, null, 1);
         fs.writeFile(fileName, output, (err) => {

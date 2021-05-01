@@ -2,7 +2,6 @@
 "use strict";
 
 const yargs = require('./yargs');
-
 const {convertToJson} = require('./convertToJson');
 const exportAndImport = require('./exportsANDImport');
 const {compareJsons} = require('./compareJsons');
@@ -16,6 +15,9 @@ else {
     name = '*'
 }
 
-const first = convertToJson(exportAndImport.importAssFile(`${name}`));
-const second = convertToJson(exportAndImport.importAssFile(`${name}_edited`),'second')
+
+
+
+const first = convertToJson(exportAndImport.importAssFile(name,1));
+const second = convertToJson(exportAndImport.importAssFile(name,2))
 exportAndImport.exportAsTxt(compareJsons(first,second))
