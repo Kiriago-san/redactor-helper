@@ -1,0 +1,140 @@
+{
+ "id": "eda5ee44-9172-4dd5-9ad6-0ebb9dab2b2e",
+ "version": "2.0",
+ "name": "Lexie Assistant",
+ "url": "https://www.dominos.com",
+ "tests": [
+  {
+   "id": "8c32111b-ea30-4ac6-94c9-9fe075c7ef05",
+   "name": "menuDominos",
+   "utterances": [
+    "dominos menu -category-",
+    "menu dominos -category-"
+   ],
+   "merchantName": "dominos",
+   "intentType": "menuListing",
+   "commands": [
+    {
+     "id": "9589c09a-efd0-4ee2-9466-b325d7640685",
+     "comment": "",
+     "command": "open",
+     "target": "https://www.dominos.com",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "d8a00327-8799-4167-a203-37bd53ebe738",
+     "comment": "",
+     "command": "setWindowSize",
+     "target": "1680x975",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=[data-quid=\"main-navigation-menu\"]",
+     "targets": [],
+     "value": "30000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=[data-quid=\"main-navigation-menu\"]",
+     "targets": [],
+     "value": "30000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=[data-quid=\"main-navigation-menu\"]",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "a4f15c90-e4f3-4478-8c60-5bd9e6d3ed03",
+     "comment": "",
+     "command": "click",
+     "target": "css=[data-quid=\"main-navigation-menu\"]",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "xpath=//li[@class=\"nav__menu-item\"]//a[contains(., 'Pasta')]",
+     "targets": [],
+     "value": "30000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "xpath=//li[@class=\"nav__menu-item\"]//a[contains(., 'Pasta')]",
+     "targets": [],
+     "value": "30000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "xpath=//li[@class=\"nav__menu-item\"]//a[contains(., 'Pasta')]",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "7d6f7700-ac5b-428c-af3b-6f5a8f4bb9c4",
+     "comment": "",
+     "command": "click",
+     "target": "xpath=//li[@class=\"nav__menu-item\"]//a[contains(., 'Pasta')]",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "{\"slotName\":\"category\",\"slotDataType\":\"lexie_merchantsCategories\",\"htmlSlotTypes\":[]}"
+    }
+   ]
+  }
+ ],
+ "suites": [
+  {
+   "id": "505cf352-056b-49c4-8fa0-aa17521bde4b",
+   "name": "Default Intent Chain",
+   "persistSession": false,
+   "parallel": false,
+   "timeout": 300,
+   "tests": [
+    "8c32111b-ea30-4ac6-94c9-9fe075c7ef05"
+   ]
+  }
+ ],
+ "urls": [
+  "http://ec2-18-217-42-235.us-east-2.compute.amazonaws.com:8501/",
+  "http://ec2-3-134-109-215.us-east-2.compute.amazonaws.com/8501",
+  "http://ec2-3-134-109-215.us-east-2.compute.amazonaws.com:8501/",
+  "http://ec2-18-218-129-82.us-east-2.compute.amazonaws.com:8501/",
+  "https://www.dominos.com/"
+ ],
+ "plugins": []
+}

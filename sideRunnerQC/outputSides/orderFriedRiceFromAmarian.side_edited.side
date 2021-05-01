@@ -1,0 +1,341 @@
+{
+ "id": "471ff4fe-b4e8-4313-89aa-13e6f9b6c785",
+ "version": "2.0",
+ "name": "amarian",
+ "url": "https://www.amarinthaicuisine.com/",
+ "tests": [
+  {
+   "id": "656447dc-154e-4893-aece-299ad7c843e3",
+   "name": "amarin",
+   "utterances": [
+    "order chicken fried rice from amarin"
+   ],
+   "merchantName": "",
+   "intentType": "information",
+   "commands": [
+    {
+     "id": "984ff596-824f-488a-bb24-1d0b70b433d8",
+     "comment": "",
+     "command": "open",
+     "target": "https://www.amarinthaicuisine.com/",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "9ca4529d-e7fa-4559-b91a-99e3868bb8ef",
+     "comment": "",
+     "command": "setWindowSize",
+     "target": "1265x1395",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "id=glfButton1",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "id=glfButton1",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "id=glfButton1",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "77743d8d-a1a1-44b9-ad73-8ecaa9d0165c",
+     "comment": "",
+     "command": "click",
+     "target": "id=glfButton1",
+     "targets": [
+      [
+       "id=glfButton1",
+       "id"
+      ],
+      [
+       "css=#glfButton1",
+       "css:finder"
+      ],
+      [
+       "xpath=//div[@id='glfButton1']",
+       "xpath:attributes"
+      ],
+      [
+       "xpath=//div[5]/div/div",
+       "xpath:position"
+      ]
+     ],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "7f5c3eed-4f77-4ae1-a1da-52667e2759fe",
+     "comment": "",
+     "command": "selectFrame",
+     "target": "index=0",
+     "targets": [
+      [
+       "index=0"
+      ]
+     ],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=#mi5275093 .m-item-name",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=#mi5275093 .m-item-name",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=#mi5275093 .m-item-name",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "655ac345-524b-4efc-bbf6-aaf2a43c8cb6",
+     "comment": "",
+     "command": "click",
+     "target": "css=#mi5275093 .m-item-name",
+     "targets": [
+      [
+       "css=#mi5275093 .m-item-name",
+       "css:finder"
+      ],
+      [
+       "xpath=//div[@id='mi5275093']/div/div/div[2]",
+       "xpath:idRelative"
+      ],
+      [
+       "xpath=//div[9]/div[3]/div[5]/div/div/div[2]",
+       "xpath:position"
+      ]
+     ],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=.cb-button:nth-child(2) .svg-icon-check-square",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=.cb-button:nth-child(2) .svg-icon-check-square",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=.cb-button:nth-child(2) .svg-icon-check-square",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "15d55cfb-e174-4ae5-a881-64e0e21f7bbc",
+     "comment": "",
+     "command": "click",
+     "target": "css=.cb-button:nth-child(2) .svg-icon-check-square",
+     "targets": [
+      [
+       "css=.cb-button:nth-child(2) .svg-icon-check-square",
+       "css:finder"
+      ]
+     ],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=.fb-addons-footer-inner > .btn",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=.fb-addons-footer-inner > .btn",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=.fb-addons-footer-inner > .btn",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "f1b108c3-a72c-449a-8449-795847457527",
+     "comment": "",
+     "command": "click",
+     "target": "css=.fb-addons-footer-inner > .btn",
+     "targets": [
+      [
+       "css=.fb-addons-footer-inner > .btn",
+       "css:finder"
+      ],
+      [
+       "xpath=//ui-view[@id='fb-content']/app-restaurant/div/ui-view/app-menu/ui-view/app-addons/div[2]/div[3]/div[2]/div",
+       "xpath:idRelative"
+      ],
+      [
+       "xpath=//app-addons/div[2]/div[3]/div[2]/div",
+       "xpath:position"
+      ]
+     ],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "pause",
+     "target": "3000",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=.fb-header-btn-right:nth-child(4) > .svg-icon-cart",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=.fb-header-btn-right:nth-child(4) > .svg-icon-cart",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=.fb-header-btn-right:nth-child(4) > .svg-icon-cart",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "58bacadd-6e38-4747-a4d0-7db45e2fe05d",
+     "comment": "",
+     "command": "click",
+     "target": "css=.fb-header-btn-right:nth-child(4) > .svg-icon-cart",
+     "targets": [
+      [
+       "css=.fb-header-btn-right:nth-child(4) > .svg-icon-cart",
+       "css:finder"
+      ]
+     ],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "f4666553-ddaf-487e-b9aa-6d4640997649",
+     "comment": "",
+     "command": "runScript",
+     "target": "window.scrollTo(0,0)",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    }
+   ]
+  }
+ ],
+ "suites": [
+  {
+   "id": "e7f5cf1b-e9ee-43ae-bdcf-f22b79ea80dc",
+   "name": "Default Suite",
+   "persistSession": false,
+   "parallel": false,
+   "timeout": 300,
+   "tests": [
+    "656447dc-154e-4893-aece-299ad7c843e3"
+   ]
+  }
+ ],
+ "urls": [
+  "https://www.amarinthaicuisine.com/"
+ ],
+ "plugins": []
+}

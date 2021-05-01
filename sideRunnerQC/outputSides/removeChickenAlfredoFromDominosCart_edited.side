@@ -1,0 +1,229 @@
+{
+ "id": "eda5ee44-9172-4dd5-9ad6-0ebb9dab2b2e",
+ "version": "2.0",
+ "name": "Lexie Assistant",
+ "url": "https://www.dominos.com",
+ "tests": [
+  {
+   "id": "8c32111b-ea30-4ac6-94c9-9fe075c7ef05",
+   "name": "dominoPizzaRemoveFromCart",
+   "utterances": [
+    "remove -productName- from dominos cart",
+    "remove -productName- order from dominos cart"
+   ],
+   "merchantName": "dominos",
+   "intentType": "removeOrder",
+   "commands": [
+    {
+     "id": "9589c09a-efd0-4ee2-9466-b325d7640685",
+     "comment": "",
+     "command": "open",
+     "target": "https://www.dominos.com",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "d8a00327-8799-4167-a203-37bd53ebe738",
+     "comment": "",
+     "command": "setWindowSize",
+     "target": "1680x975",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "890c1aeb-10f8-4dee-b3a7-0320d97b64c8",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=[data-quid=main-navigation-menu]",
+     "targets": [],
+     "value": "5000",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "c37480d6-1e5a-4968-b0ab-65f6a48602ea",
+     "comment": "",
+     "command": "executeScript",
+     "target": "return document.querySelector(\"[data-quid=header-mobile-checkout]\")",
+     "targets": [],
+     "value": "cartExists",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "e6737d0c-9437-4158-968a-3e7dac6e4602",
+     "comment": "",
+     "command": "if",
+     "target": "${cartExists} === null",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "4ee1ef5d-8eb9-44d7-81b5-6d6656591f56",
+     "comment": "",
+     "command": "click",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "630658ef-5595-4bc0-aadb-b10c4268867a",
+     "comment": "",
+     "command": "else",
+     "target": "",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "efb24e35-3a01-4e77-8b5f-2b601ff78b4f",
+     "comment": "",
+     "command": "executeScript",
+     "target": "return document.querySelector(\"[data-quid=header-mobile-checkout]\").getAttribute(\"data-order-qty\")",
+     "targets": [],
+     "value": "itemsCount",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "c3d58ea8-fb47-411a-ad79-264a5605b280",
+     "comment": "",
+     "command": "if",
+     "target": "${itemsCount} > 0",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "eb72ff1e-0b96-4174-bbb6-fd66e784aa73",
+     "comment": "",
+     "command": "click",
+     "target": "css=[data-quid=header-mobile-checkout]",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementPresent",
+     "target": "xpath=//li[@class=\"mini-cart__product-list__product media\"]//button[contains(., 'Chicken Alfredo')]/ancestor::li//button[contains(., 'remove')]",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "waitForElementVisible",
+     "target": "xpath=//li[@class=\"mini-cart__product-list__product media\"]//button[contains(., 'Chicken Alfredo')]/ancestor::li//button[contains(., 'remove')]",
+     "targets": [],
+     "value": "10000"
+    },
+    {
+     "id": "",
+     "comment": "",
+     "command": "mouseOver",
+     "target": "xpath=//li[@class=\"mini-cart__product-list__product media\"]//button[contains(., 'Chicken Alfredo')]/ancestor::li//button[contains(., 'remove')]",
+     "targets": [],
+     "value": ""
+    },
+    {
+     "id": "2388fc1f-827b-435f-9cdd-ad1f1d48a186",
+     "comment": "",
+     "command": "click",
+     "target": "xpath=//li[@class=\"mini-cart__product-list__product media\"]//button[contains(., 'Chicken Alfredo')]/ancestor::li//button[contains(., 'remove')]",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "{\"slotName\":\"productName\",\"slotDataType\":\"lexie_merchantsAllProductNames\",\"htmlSlotTypes\":[]}"
+    },
+    {
+     "id": "c18aafd5-62c1-42f2-8dc2-7752cc9bbad3",
+     "comment": "",
+     "command": "end",
+     "target": "",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    },
+    {
+     "id": "a4caf832-8531-430e-a845-be0e9d470273",
+     "comment": "",
+     "command": "end",
+     "target": "",
+     "targets": [],
+     "value": "",
+     "lexieMetaData": "lexieNoMD"
+    }
+   ]
+  }
+ ],
+ "suites": [
+  {
+   "id": "505cf352-056b-49c4-8fa0-aa17521bde4b",
+   "name": "Default Intent Chain",
+   "persistSession": false,
+   "parallel": false,
+   "timeout": 300,
+   "tests": [
+    "8c32111b-ea30-4ac6-94c9-9fe075c7ef05"
+   ]
+  }
+ ],
+ "urls": [
+  "http://ec2-18-217-42-235.us-east-2.compute.amazonaws.com:8501/",
+  "http://ec2-3-134-109-215.us-east-2.compute.amazonaws.com/8501",
+  "http://ec2-3-134-109-215.us-east-2.compute.amazonaws.com:8501/",
+  "http://ec2-18-218-129-82.us-east-2.compute.amazonaws.com:8501/",
+  "https://www.dominos.com/"
+ ],
+ "plugins": []
+}
