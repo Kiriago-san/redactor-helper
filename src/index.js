@@ -1,10 +1,21 @@
 #!/usr/bin/env node
 "use strict";
 
+const yargs = require('./yargs');
+
 const {convertToJson} = require('./convertToJson');
 const exportAndImport = require('./exportsANDImport');
 const {compareJsons} = require('./compareJsons');
 
-const first = convertToJson(exportAndImport.importAssFile('Графіті_Гурманки_Koufuku_Graffiti_07_з_12720p_UKR_SUB_track3_ukr'));
-const second = convertToJson(exportAndImport.importAssFile('Графіті_Гурманки_Koufuku_Graffiti_07_з_12720p_UKR_SUB_track3_ukr_edited'),'second')
+
+let name;
+if(yargs.takeName()!=null){
+     name = yargs.takeName()
+}
+else {
+    name = '*'
+}
+
+const first = convertToJson(exportAndImport.importAssFile(`${name}`));
+const second = convertToJson(exportAndImport.importAssFile(`${name}_edited`),'second')
 exportAndImport.exportAsTxt(compareJsons(first,second))

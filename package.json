@@ -1,11 +1,26 @@
 {
-  "name": "ass-json",
+  "name": "redactor-helper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "compare 2 ass files",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "redactor-helper"
   },
-  "author": "",
-  "license": "ISC"
+  "bin": {
+    "redactor-helper": "src/index.js"
+  },
+  "dependencies": {
+    "yargs": "^16.2.0"
+  },
+  "author": "kiriago",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiriago-san/redactor-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kiriago-san/redactor-helper/issues"
+  },
+  "homepage": "https://github.com/Kiriago-san/redactor-helper#readme"
 }
