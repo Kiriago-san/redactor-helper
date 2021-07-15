@@ -19,5 +19,6 @@ else {
 
 
 const first = convertToJson(exportAndImport.importAssFile(name,1));
-const second = convertToJson(exportAndImport.importAssFile(name,2))
+const second = convertToJson(exportAndImport.importAssFile(name,2));
+//exportAndImport.exportAsTxt(first)
 exportAndImport.exportAsTxt(compareJsons(first,second))
