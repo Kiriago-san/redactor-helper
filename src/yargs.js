@@ -8,7 +8,7 @@ class yargses {
             .usage("Usage: redactor-helper -n <fileName>")
             .option("n", { alias: "fileName", describe: "Your fileName without .side", type: "string", demandOption: false })
             .default('n', null)
-            .option('srt', { alias: "SRT", describe: "Your fileName without .side", type: "string", demandOption: false })
+            .option('srt', { alias: "SRT", describe: "Title of files that would be created", type: "string", demandOption: false })
             .default('srt', '')
             .argv;
 

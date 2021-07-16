@@ -16,10 +16,7 @@ class exportsAndImportsFile {
 
             for (let i = 0; i < counter; i++) {
                 if ((tier == 1 && data[i].toString().includes('.ass') == true && data[i].includes('_edited.ass') == false) || (srt && data[i].toString().includes('.ass') == true)) {
-
                     rawdata = fs.readFileSync(`./${data[i]}`, 'utf8').split('\n');
-                    console.log('here')
-
                 }
                 if (tier == 2 && data[i].toString().includes('_edited.ass') == true) {
 
@@ -31,7 +28,6 @@ class exportsAndImportsFile {
         else if (name !== '*') {
             if (tier == 1 && name !== '*') {
                 rawdata = fs.readFileSync(`./${name}.ass`, 'utf8').split('\n');
-                console.log('here2')
             }
             if (tier == 2 && name.includes('_edited') == true && name !== '*') {
             }
