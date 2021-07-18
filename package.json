@@ -1,6 +1,6 @@
 {
   "name": "redactor-helper",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "compare 2 ass files and create srt files from 1 ass file",
   "main": "./src/index.js",
   "scripts": {

@@ -54,7 +54,7 @@ class exportsAndImportsFile {
 
     exportAsTxt(result) {
         let fileName = `./changeLog.txt`;
-        let output = JSON.stringify(result, null, 1);
+        let output = JSON.stringify(result, null, 1).replace(/[[\]]|",|"/g,'').replace(/\\/g,'"');
         fs.writeFile(fileName, output, (err) => {
             if (err) throw err;
             console.log('Data written to file');

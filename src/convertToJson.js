@@ -29,7 +29,8 @@ class convertToJson {
                     texts = texts.replace(new RegExp('(?<=/)(.*)(?=/)'), 'c') //change to lat C
                     let commentRaw = texts;
                     texts = texts.replace(new RegExp('(?<={/c/)(.*)(?=})'), '').replace('{/c/}', '')// delete comment
-                    comment = (commentRaw.split(new RegExp('(?<=/c/)(.*)(?=})')))[1]// add comment to comment
+                    comment = ((commentRaw.split(new RegExp('(?<=/c/)(.*)(?=})')))[1]).replace(/"/g,"/'")// add comment to comment
+               //console.log(comment)
                 }
                 texts = texts.replace(/(?<={)(.*)(?=})/g, '').replace('{}', '')
                 startTime = ((input[i].split(new RegExp('(?<=0,)(.*)(?=,0:)')))[1]).replace('.',',');
