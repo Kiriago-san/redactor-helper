@@ -63,8 +63,10 @@ class exportsAndImportsFile {
 
     exportAsSRT(result,name) {
         let fileName = `./${name}.srt`;
+        
        // let newRes = (result.shift());
-        let output = JSON.stringify(result, '\n', 1).replace(/[[\]]|",|"/g,'')
+        let output = result.join('\n')//JSON.stringify(result, '\n', 1).replace(/[[\]]|",|"/g,'').trim()
+        
         fs.writeFile(fileName, output, (err) => {
             if (err) throw err;
             //console.log('Data written to file');
