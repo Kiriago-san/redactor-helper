@@ -13,7 +13,7 @@ class ConvertToSRT {
 
             }
             result.push(`${i + 2}`);
-            result.push(`${(file[i].startTime)} --> ${file[i].endTime}`);
+            result.push(`${(file[i].startTime.replace('.',','))} --> ${file[i].endTime.replace('.',',')}`);
             result.push(`${file[i].text}`)
             result.push("");
         }
