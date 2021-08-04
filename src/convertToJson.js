@@ -33,7 +33,7 @@ class convertToJson {
                //console.log(comment)
                 }
                 texts = texts.replace(/(?<={)(.*)(?=})/g, '').replace('{}', '')
-                startTime = (input[i].split(new RegExp('(?<=0,)(.*)(?=,0:)')))[1];
+                startTime = (input[i].split(new RegExp('(?<=,)(.*)(?=,0:)')))[1];
                 splitArray = input[i].split(',')
                 endTime = splitArray[2];
                 actor = splitArray[3];
