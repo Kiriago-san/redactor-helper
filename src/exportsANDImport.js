@@ -5,12 +5,32 @@ const path = require('path');
 
 class exportsAndImportsFile {
 
+    importSRTFile(name) {
+        var rawdata;
+        let data = fs.readdirSync(process.cwd());
+        let counter = fs.readdirSync(process.cwd()).length;
+
+        if (name === '*') {
+            for (let i = 0; i < counter; i++) {
+                if (data[i].toString().includes('.SRT') == true) {
+                    rawdata = fs.readFileSync(`./${data[i]}`, 'utf8').split('\n');
+                    // console.log(rawdata)
+                }
+            }
+        }
+
+
+        else {
+            rawdata = fs.readFileSync(`./${name}.srt`, 'utf8').split('\n');
+        }
+
+        return rawdata;
+    }
+
     importAssFile(name, tier, srt) {
         let rawdata;
         let data = fs.readdirSync(process.cwd());
         let counter = fs.readdirSync(process.cwd()).length;
-
-
 
         if (name === '*') {
 
@@ -19,7 +39,6 @@ class exportsAndImportsFile {
                     rawdata = fs.readFileSync(`./${data[i]}`, 'utf8').split('\n');
                 }
                 if (tier == 2 && data[i].toString().includes('_edited.ass') == true) {
-
                     rawdata = fs.readFileSync(`./${data[i]}`, 'utf8').split('\n');
                 }
             }
@@ -30,13 +49,10 @@ class exportsAndImportsFile {
                 rawdata = fs.readFileSync(`./${name}.ass`, 'utf8').split('\n');
             }
             if (tier == 2 && name.includes('_edited') == true && name !== '*') {
+                rawdata = fs.readFileSync(`./${name}_edited.ass`, 'utf8').split('\n');
             }
         }
 
-
-
-        //     let rawdata = fs.readFileSync(`./${name}.ass`,'utf8').split('\n');
-        //    //const file = JSON.parse(rawdata);
         console.log(tier, name)
         return rawdata;
     }
@@ -52,21 +68,21 @@ class exportsAndImportsFile {
         });
     }
 
-    exportAsTxt(result) {
-        let fileName = `./changeLog.txt`;
-        let output = JSON.stringify(result, null, 1).replace(/[[\]]|",|"/g,'').replace(/\\/g,'"');
-        fs.writeFile(fileName, output, (err) => {
+    exportAsTxt(result, name, strigify = true) {
+        let fileName = name == undefined ? `./changeLog.txt` : name;
+        let output = JSON.stringify(result, null, 1).replace(/[[\]]|",|"/g, '').replace(/\\/g, '"');
+        fs.writeFile(fileName, strigify == true ? output : result, (err) => {
             if (err) throw err;
             console.log('Data written to file');
         });
     }
 
-    exportAsSRT(result,name) {
+    exportAsSRT(result, name) {
         let fileName = `./${name}.srt`;
-        
-       // let newRes = (result.shift());
+
+        // let newRes = (result.shift());
         let output = result.join('\n')//JSON.stringify(result, '\n', 1).replace(/[[\]]|",|"/g,'').trim()
-        
+
         fs.writeFile(fileName, output, (err) => {
             if (err) throw err;
             //console.log('Data written to file');

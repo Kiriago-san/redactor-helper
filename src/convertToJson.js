@@ -3,6 +3,38 @@ const exportAndImport = require('./exportsANDImport');
 
 class convertToJson {
 
+    convertSRTtoJSON(input) {
+        let data = [];
+        let buffer = [];
+
+        for (const numberOfRow in input) {
+            let rawData = `${input[numberOfRow]}`.replace('\r', '');
+            let startTime;
+            let comment;
+            //console.log(rawData)
+
+            let index = rawData.indexOf(' --> ');
+            let symbols = rawData.search(/[а-я]/gm)
+            if (index != -1) {
+                let bufferA = rawData.split(' --> ')
+                startTime = bufferA[0];
+                buffer.push({startTime})
+            }
+            else if(symbols != -1){
+                comment = rawData;
+                buffer.push({comment});
+            }
+        }
+
+        for(let i = 0;i<((buffer.length)/2);i++ ){
+            let startTime = buffer[i*2].startTime;
+            let comment = buffer[i*2+1].comment;
+            data.push({startTime,comment})
+        }
+        
+        return data;
+    }
+
 
 
     convertToJson(input, tag) {
@@ -29,8 +61,8 @@ class convertToJson {
                     texts = texts.replace(new RegExp('(?<=/)(.*)(?=/)'), 'c') //change to lat C
                     let commentRaw = texts;
                     texts = texts.replace(new RegExp('(?<={/c/)(.*)(?=})'), '').replace('{/c/}', '')// delete comment
-                    comment = ((commentRaw.split(new RegExp('(?<=/c/)(.*)(?=})')))[1]).replace(/"/g,"/'")// add comment to comment
-               //console.log(comment)
+                    comment = ((commentRaw.split(new RegExp('(?<=/c/)(.*)(?=})')))[1]).replace(/"/g, "/'")// add comment to comment
+                    //console.log(comment)
                 }
                 texts = texts.replace(/(?<={)(.*)(?=})/g, '').replace('{}', '')
                 startTime = (input[i].split(new RegExp('(?<=,)(.*)(?=,0:)')))[1];
@@ -59,9 +91,6 @@ function getObject(startTime = 1, text = 2, comment = ' ', endTime = 1, actor = 
     }
 }
 
-module.exports = {
-    getObject: getObject,
-}
 
 
 module.exports = new convertToJson()

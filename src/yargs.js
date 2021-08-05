@@ -10,12 +10,19 @@ class yargses {
             .default('n', null)
             .option('srt', { alias: "SRT", describe: "Title of files that would be created", type: "string", demandOption: false })
             .default('srt', '')
+            .option('fix', {alias:"FIX", describe:"Create a 'fix'.txt file comparing .ass and .srt file", type:"string", demandOption: false})
+            .default('fix','')
             .argv;
 
         switch (option) {
             case 'name': return options.fileName;
             case 'srt': return options.srt;
-    
+            case 'fix': return options.fix;
+        }
+        return {
+            'name': options.fileName,
+            'srt': option.srt,
+            'fix': option.fix
         }
     }
 
@@ -25,6 +32,10 @@ class yargses {
 
     takeSRT(){
         return this.takeOption('srt')
+    }
+
+    takeFix(){
+        return this.takeOption('fix')
     }
 
    
