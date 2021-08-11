@@ -21,6 +21,7 @@ else if (yargs.takeSRT()) {
     createSRT.createSRTbyActors(first, srt);
 }
 else {
-    const second = convertToJson(exportAndImport.importAssFile(name, 2));
+    let second = convertToJson(exportAndImport.importAssFile(name, 2));
+    console.log(second)
     exportAndImport.exportAsTxt(compareJsons(first, second));
 }
