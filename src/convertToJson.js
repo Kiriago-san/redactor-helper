@@ -11,7 +11,6 @@ class convertToJson {
             let rawData = `${input[numberOfRow]}`.replace('\r', '');
             let startTime;
             let comment;
-            //console.log(rawData)
 
             let index = rawData.indexOf(' --> ');
             let symbols = rawData.search(/[а-я]/gm)
@@ -37,7 +36,7 @@ class convertToJson {
 
 
 
-    convertToJson(input, tag) {
+    convertToJson(input) {
 
         let result = [];
 
@@ -53,7 +52,6 @@ class convertToJson {
             let texts = '';
             let comment = '';
             if (input[i].includes('Dialogue:')) {
-                //console.log(input[i]);
                 let splitArray = ((input[i].replace(/\\N/g, ' '))).replace(/\r/g, '').replace(/\"/g, '"').split(',,');
                 let number = splitArray.length
                 texts = splitArray[number - 1]
@@ -62,7 +60,6 @@ class convertToJson {
                     let commentRaw = texts;
                     texts = texts.replace(new RegExp('(?<={/c/)(.*)(?=})'), '').replace('{/c/}', '')// delete comment
                     comment = ((commentRaw.split(new RegExp('(?<=/c/)(.*)(?=})')))[1]).replace(/"/g, "/'")// add comment to comment
-                    //console.log(comment)
                 }
                 texts = texts.replace(/(?<={)(.*)(?=})/g, '').replace('{}', '')
                 startTime = (input[i].split(new RegExp('(?<=,)(.*)(?=,0:)')))[1];

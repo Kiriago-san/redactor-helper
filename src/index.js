@@ -8,20 +8,22 @@ const { compareJsons } = require('./compareJsons');
 const createSRT = require('./createSRTs');
 const createFixes = require('./createFixes/createFixes')
 
+const options = yargs.takeOption();
 
-const name = yargs.takeName() != null ? yargs.takeName() : '*'
-let srt = yargs.takeSRT()
+const name = options.name != null ? options.name : '*'
+const srt = options.srt;
+const consoles = options.consoles;
 
-const first = convertToJson(exportAndImport.importAssFile(name, 1, srt));
+
+const first = convertToJson(exportAndImport.importAssFile(name, 1, srt, consoles));
 
 if (yargs.takeFix()) {
     createFixes.create(first);
 }
-else if (yargs.takeSRT()) {
-    createSRT.createSRTbyActors(first, srt);
+else if (srt) {
+    createSRT.createSRTbyActors(first, srt, consoles);
 }
 else {
-    let second = convertToJson(exportAndImport.importAssFile(name, 2));
-    console.log(second)
+    let second = convertToJson(exportAndImport.importAssFile(name, 2, srt, consoles));
     exportAndImport.exportAsTxt(compareJsons(first, second));
 }

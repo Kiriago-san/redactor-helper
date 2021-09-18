@@ -3,8 +3,8 @@ const yargs = require('./yargs');
 const convertToSRT = require('./converToSRT')
 
 class createSRT{
-    createSRTbyActors(file,srt){
-       this.createSRTFile(file,this.getStyleNames(file),srt)
+    createSRTbyActors(file,srt,consoles){
+       this.createSRTFile(file,this.getStyleNames(file),srt,consoles)
     }
 
     getStyleNames(file){
@@ -19,7 +19,7 @@ class createSRT{
         return names;
     }
 
-    createSRTFile(file,names,title){
+    createSRTFile(file,names,title,consoles){
         let srt = [];
         for(let i = 0; i<names.length;i++ ){
             for(let a = 0; a <file.length;a++){
@@ -27,7 +27,12 @@ class createSRT{
                     srt.push(file[a])
                 }
             }
-            exportAndImport.exportAsSRT(convertToSRT.convertToSRT(srt),`${names[i]}_${title}`);
+            if(!consoles){
+                exportAndImport.exportAsSRT(convertToSRT.convertToSRT(srt),`${names[i]}_${title}`);
+            }else{
+                exportAndImport.exportAsSRT(convertToSRT.convertToSRT(srt),`output/${names[i]}_sub`);
+            }
+            
             srt = [];
         }
         console.log(`Created ${names.length} file(s)`)
